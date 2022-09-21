@@ -10,7 +10,7 @@ const app = express()
 
 app.use(express.json())
 
-app.use("/api/brands", require("./routes/brands.route"))
+app.use("/api/brand", require("./routes/brands.route"))
 
 app.use("/api/crypto", require("./routes/crypto.route"))
 

@@ -1,4 +1,4 @@
-const { DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST, DB_DIALECT } = require("./config.const");
+const { DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST, DB_DIALECT, DATABASE_URL } = require("../constants/config.const");
 
 module.exports = {
     development: {
@@ -9,7 +9,7 @@ module.exports = {
         "dialect": DB_DIALECT
     },
     production: {
-        url: process.env.DATABASE_URL,
+        url: DATABASE_URL,
         dialect: 'postgres',
     },
 };
