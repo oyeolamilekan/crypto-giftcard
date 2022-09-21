@@ -26,10 +26,10 @@ app.use('*', function (_, res) {
     res.status(404).json({ data: 'route not found' });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, async () => {
-    console.log('Server up on http://localhost:5000')
-    await sequelize.authenticate()
+    // console.log('Server up on http://localhost:5000')
+    // await sequelize.authenticate()
     console.log('Database Connected!')
 })
