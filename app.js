@@ -26,7 +26,9 @@ app.use('*', function (_, res) {
     res.status(404).json({ data: 'route not found' });
 });
 
-app.listen({ port: 5001 }, async () => {
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, async () => {
     console.log('Server up on http://localhost:5000')
     await sequelize.authenticate()
     console.log('Database Connected!')
