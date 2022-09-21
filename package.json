@@ -1,0 +1,33 @@
+{
+  "name": "crypto-giftcard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon app.js",
+    "seed": "sequelize db:seed:all",
+    "undo": "sequelize db:seed:undo:all",
+    "drop": "sequelize db:drop",
+    "create_migrations": "sequelize migration:create --name $npm_config_name",
+    "migrate": "sequelize db:migrate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bull": "^4.9.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "quidax-node": "^1.0.1",
+    "sequelize": "^6.21.6",
+    "sequelize-cli": "^6.4.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
