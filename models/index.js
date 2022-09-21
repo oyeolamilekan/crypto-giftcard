@@ -5,11 +5,10 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require("../config/config")["production"];
+const config = require("../config/config")[env];
 const db = {};
 
 let sequelize;
-console.log(config)
 if (config.url) {
   sequelize = new Sequelize(config.url, config);
 } else {
