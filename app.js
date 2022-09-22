@@ -10,15 +10,15 @@ const app = express()
 
 app.use(express.json())
 
-app.use("/api/brand", require("./routes/brands.route"))
+app.use("/api", require("./routes/brands.route"))
 
-app.use("/api/crypto", require("./routes/crypto.route"))
+app.use("/api", require("./routes/crypto.route"))
 
-app.use("/api/order", require("./routes/order.route"))
+app.use("/api", require("./routes/order.route"))
 
-app.use("/api/products", require("./routes/products.route"))
+app.use("/api", require("./routes/products.route"))
 
-app.use("/api/webhook", require("./routes/webhook.route"))
+app.use("/api", require("./routes/webhook.route"))
 
 sync()
 
