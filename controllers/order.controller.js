@@ -11,7 +11,6 @@ const createOrder = async (req, res) => {
         include: { model: Brand, as: "brand" }
     })
     const generateWalletAddress = await quidax.wallets.createPaymentAddress("me", acceptedCrypto.shortTitle)
-    await sleep(5000)
     const walletAddress = await quidax.wallets.fetchPaymentAddressById("me", acceptedCrypto.shortTitle, generateWalletAddress.data.id)
     const currentPriceTickerObj = await quidax.markets.fetchMarketTicker(
         acceptedCrypto.ticker
