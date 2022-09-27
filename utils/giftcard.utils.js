@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 const { v4: uuidv4 } = require('uuid');
-const { CLIENT_ID, CLIENT_SECRET, GRANT_TYPE } = require("../constants/config.const");
+const { CLIENT_ID, CLIENT_SECRET, GRANT_TYPE, BASE_URL } = require("../constants/config.const");
 
 const buyGiftcard = async ({ senderName, recipientEmail, productId, unitPrice }) => {
     // Reloadly reference https://developers.reloadly.com/

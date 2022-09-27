@@ -65,6 +65,14 @@ module.exports = (sequelize, DataTypes) => {
     recieveAddress: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    cryptoInstantOrderResponse: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    giftCardResponse: {
+      type: DataTypes.TEXT,
+      allowNull: false
     }
   }, {
     sequelize,

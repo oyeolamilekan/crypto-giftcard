@@ -12,7 +12,7 @@ const protectWebook = async (req, res, next) => {
 
         if (webhookKey != WEBHOOKKEY) {
             res.status(500).json({
-                message: "Not yet boss, no be me you go send back to my village."
+                message: "Not yet boss, no be me you go run street."
             })
         }
         next()
