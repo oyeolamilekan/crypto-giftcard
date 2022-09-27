@@ -28,9 +28,9 @@ const confirmedDepositQueueListener = async () => {
             if (orderObj.expectedAmount >= data.amount) {
                 orderObj.state = 'paid';
                 orderObj.save()
-                const response = await buyGiftcard({ senderName: orderObj.name, recipientEmail: orderObj.email, productId: orderObj.product.productId, unitPrice: orderObj.product.amount })
+                // const response = await buyGiftcard({ senderName: orderObj.name, recipientEmail: orderObj.email, productId: orderObj.product.productId, unitPrice: orderObj.product.amount })
                 // convert crypto to instant order
-                console.log(response.data)
+                // console.log(response.data)
 
             }
         } catch (error) {
