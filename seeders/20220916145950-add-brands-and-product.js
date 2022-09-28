@@ -39,6 +39,7 @@ module.exports = {
           title: element.title,
           amount: Number(price),
           currency: 'USD',
+          logo: element.logo,
           slug: `${convertToSlug(element.title)}-${uuidv4()}`,
           brandId: element.id,
           productId: element.brandProductId,

@@ -25,7 +25,7 @@ const createOrder = async (req, res) => {
         message,
         productId,
         walletAddressId: generateWalletAddress.data.id,
-        recieveAddress: walletAddress.data.address ?? "fkfkfkkf",
+        recieveAddress: walletAddress.data.address,
         expectedAmount: estimatedAmount,
         expectedCurrency: acceptedCrypto.shortTitle
     });
