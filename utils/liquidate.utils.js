@@ -2,7 +2,7 @@ const quidax = require("./crypto")
 
 const sellCrypto = async ({ ask, volume }) => {
     const quidaxObj = await quidax.instantOrder.createInstantOrder("me", {
-        bid: "ngn",
+        bid: "usdt",
         ask: ask,
         type: "sell",
         volume: volume,
