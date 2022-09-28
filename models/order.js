@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     toJSON() {
-      return { ...this.get(), id: undefined, cryptoInstantOrderResponse: undefined, giftCardResponse: undefined, instantOrderId: undefined, giftCardId: undefined, sendFee: undefined }
+      return { ...this.get(), cryptoInstantOrderResponse: undefined, giftCardResponse: undefined, instantOrderId: undefined, giftCardId: undefined, sendFee: undefined }
     }
 
   }
