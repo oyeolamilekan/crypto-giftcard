@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Product }) {
       this.belongsTo(Product, { foreignKey: 'productId', as: 'product' })
     }
+
+    toJSON() {
+      return { ...this.get(), id: undefined, cryptoInstantOrderResponse: undefined, giftCardResponse: undefined, instantOrderId: undefined, giftCardId: undefined, sendFee: undefined }
+    }
+
   }
   Order.init({
     name: {

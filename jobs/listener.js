@@ -31,11 +31,12 @@ const confirmedDepositQueueListener = async () => {
                 const sellCryptoResponse = await sellCrypto({ ask : orderObj.expectedCurrency, volume: orderObj.expectedAmount })
                 orderObj.state = 'paid';
                 orderObj.instantOrderId = sellCryptoResponse.data.id
-                orderObj.giftCardId = giftCardResponse.id
-                orderObj.cryptoInstantOrderResponse = JSON.stringify(giftCardResponse.data)
-                orderObj.giftCardResponse = JSON.stringify(sellCryptoResponse.data)
-                console.log(giftCardResponse.data)
-                console.log(sellCryptoResponse.data)
+                orderObj.giftCardId = giftCardResponse.transactionId
+                orderObj.discountAmount = giftCardResponse.discount
+                orderObj.sendFee = giftCardResponse.fee
+                orderObj.convertedAmount = sellCryptoResponse.receive.amount
+                orderObj.giftCardResponse = JSON.stringify(giftCardResponse.data)
+                orderObj.cryptoInstantOrderResponse = JSON.stringify(sellCryptoResponse.data)
                 orderObj.save()
             } else {
                 orderObj.state = 'underpaid';
