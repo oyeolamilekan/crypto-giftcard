@@ -30,10 +30,10 @@ const confirmedDepositQueueListener = async () => {
                 const giftCardResponse = await buyGiftcard({ senderName: orderObj.name, recipientEmail: orderObj.email, productId: orderObj.product.productId, unitPrice: orderObj.product.amount })
                 const sellCryptoResponse = await sellCrypto({ ask : orderObj.expectedCurrency, volume: orderObj.expectedAmount })
                 orderObj.state = 'paid';
-                orderObj.instantOrderId = sellCryptoResponse.data.id
                 orderObj.giftCardId = giftCardResponse.transactionId
                 orderObj.discountAmount = giftCardResponse.discount
                 orderObj.sendFee = giftCardResponse.fee
+                orderObj.instantOrderId = sellCryptoResponse.data.id
                 orderObj.convertedAmount = sellCryptoResponse.data.receive.amount
                 orderObj.giftCardResponse = JSON.stringify(giftCardResponse.data)
                 orderObj.cryptoInstantOrderResponse = JSON.stringify(sellCryptoResponse.data)

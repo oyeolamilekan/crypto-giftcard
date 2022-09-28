@@ -23,7 +23,7 @@ module.exports = {
       {
         id: uuidv4(),
         title: 'App Store & iTunes US',
-        brandProductId: 3,
+        brandProductId: 21,
         description: 'Use it for purchases at any Apple Store location, on the Apple Store-app, apple.com, the App Store, iTunes, Apple Music, Apple TV, Apple News, Apple Books, Apple Arcade, iCloud, and other Apple properties. &#13;Use the Apple Gift Card for App Store, iTunes, iPhone, iPad, Air-pods, Mac book, accessories, and more. &#13;No returns or refunds on Apple Gift Cards. Terms apply. &#13;The Apple Gift Card can be used two ways: &#13;For online purchases, go to apple.com/redeem to add to your Apple Account balance. &#13;Bring this email to any Apple Store location. &#13;Beware of gift card scams. Do not share your code. Terms & Conditions Valid only for U.S. transactions in Apple properties. For assistance, visit support.apple.com/giftcard or call 1-800-275-2273. Not redeemable at Apple resellers or for cash, and no resale, refunds, or exchanges, except as required by law. Apple is not responsible for unauthorized use. Terms apply',
         logo: "https://cdn.reloadly.com/giftcards/efff4800-085b-463e-818b-64d22c599f8a.jpg",
         deliveryFee: 0.5,

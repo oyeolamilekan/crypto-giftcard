@@ -30,7 +30,7 @@ const buyGiftcard = async ({ senderName, recipientEmail, productId, unitPrice })
         }
     })
 
-    return giftcardObj;
+    return giftcardObj.data;
 }
 
 module.exports = buyGiftcard
