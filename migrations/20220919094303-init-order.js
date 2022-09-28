@@ -62,6 +62,18 @@ module.exports = {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      cryptoInstantOrderResponse: {
+        type: DataTypes.TEXT,
+      },
+      giftCardResponse: {
+        type: DataTypes.TEXT,
+      },
+      instantOrderId: {
+        type: DataTypes.STRING,
+      },
+      giftCardId: {
+        type: DataTypes.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE

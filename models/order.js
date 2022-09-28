@@ -51,6 +51,12 @@ module.exports = (sequelize, DataTypes) => {
     sendFee: {
       type: DataTypes.DECIMAL(10, 5),
     },
+    instantOrderId: {
+      type: DataTypes.STRING,
+    },
+    giftCardId: {
+      type: DataTypes.STRING,
+    },
     isDelivered: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
@@ -68,11 +74,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     cryptoInstantOrderResponse: {
       type: DataTypes.TEXT,
-      allowNull: true
     },
     giftCardResponse: {
       type: DataTypes.TEXT,
-      allowNull: true
     }
   }, {
     sequelize,

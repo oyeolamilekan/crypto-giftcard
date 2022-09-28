@@ -1,6 +1,6 @@
 const { REDIS_URL, CLIENT_ID, CLIENT_SECRET, GRANT_TYPE, AUDIENCE, BASE_URL, QUIDAX_SECRET_KEY, WEBHOOKKEY, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST, DB_DIALECT, DATABASE_URL } = process.env
 
-console.log(process.env.REDIS_URL)
+console.log(process.env.DB_NAME)
 
 module.exports = {
     REDIS_URL,

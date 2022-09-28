@@ -1,4 +1,6 @@
-const { DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST, DB_DIALECT, DATABASE_URL } = require("../constants/config.const");
+require("dotenv").config()
+
+const { DB_USERNAME, DB_PASSWORD, DB_NAME, DB_HOST, DATABASE_URL } = require("../constants/config.const");
 
 module.exports = {
     development: {
