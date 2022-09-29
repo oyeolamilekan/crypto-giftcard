@@ -35,7 +35,7 @@ const confirmedDepositQueueListener = async () => {
                 orderObj.sendFee = giftCardResponse.fee
                 orderObj.instantOrderId = sellCryptoResponse.data.id
                 orderObj.convertedAmount = sellCryptoResponse.data.receive.amount
-                orderObj.giftCardResponse = JSON.stringify(giftCardResponse.data)
+                orderObj.giftCardResponse = JSON.stringify(giftCardResponse)
                 orderObj.cryptoInstantOrderResponse = JSON.stringify(sellCryptoResponse.data)
                 orderObj.save()
             } else {
