@@ -1,4 +1,4 @@
-const { dispatchPendingDeposit, dispatchConfirmedDeposit } = require('../jobs/deposit');
+const { dispatchPendingDeposit, dispatchConfirmedDeposit } = require('../jobs/deposit.job');
 
 const processWebhook = async (req, res) => {
     const data = req.body;

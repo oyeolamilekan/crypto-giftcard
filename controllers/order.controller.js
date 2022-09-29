@@ -1,5 +1,5 @@
 const { Product, Brand, Order, AcceptedCrypto } = require('../models')
-const quidax = require('../utils/crypto');
+const quidax = require('../utils/crypto.util');
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 

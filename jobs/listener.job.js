@@ -1,8 +1,8 @@
 const Bull = require("bull")
 const { REDIS_URL } = require("../constants/config.const")
 const { Order, Product } = require('../models')
-const buyGiftcard = require("../utils/giftcard.utils")
-const sellCrypto = require("../utils/liquidate.utils")
+const buyGiftcard = require("../utils/giftcard.util")
+const sellCrypto = require("../utils/liquidate.util")
 
 const pendingDepositQueueListener = async () => {
     const depositProcessingQueue = new Bull("deposit-pending-queue", REDIS_URL)

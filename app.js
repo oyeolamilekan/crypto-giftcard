@@ -4,7 +4,7 @@ const { sequelize } = require('./models')
 
 const express = require("express");
 
-const sync = require('./jobs/listener');
+const sync = require('./jobs/listener.job');
 
 const cors = require("cors");
 

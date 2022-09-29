@@ -1,4 +1,4 @@
-const quidax = require("./crypto")
+const quidax = require("./crypto.util")
 
 const sellCrypto = async ({ ask, volume }) => {
     const quidaxObj = await quidax.instantOrder.createInstantOrder("me", {

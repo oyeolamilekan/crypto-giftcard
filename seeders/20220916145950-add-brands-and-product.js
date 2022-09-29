@@ -1,6 +1,6 @@
 'use strict';
 const { v4: uuidv4 } = require('uuid');
-const convertToSlug = require('../utils/slugify');
+const convertToSlug = require('../utils/slugify.util');
 
 module.exports = {
   async up(queryInterface, Sequelize) {
