@@ -28,6 +28,10 @@ const updateOrderWalletAddress = async () => {
         orderObj.recieveAddress = data.address
         orderObj.save()
     })
+
+    walletAddressQueue.on("global:completed", (job, result) => {
+        depositProcessingQueue.clean(0, "completed");
+    })
 }
 
 const confirmedDepositQueueListener = async () => {
