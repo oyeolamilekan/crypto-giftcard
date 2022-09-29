@@ -27,7 +27,8 @@
     "quidax-node": "^1.0.1",
     "sequelize": "^6.21.6",
     "sequelize-cli": "^6.4.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

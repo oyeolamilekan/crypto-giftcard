@@ -1,8 +1,6 @@
 const { Product, Brand, Order, AcceptedCrypto } = require('../models')
 const quidax = require('../utils/crypto.util');
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
 const createOrder = async (req, res) => {
     const { name, email, senderName, message, currency, productId } = req.body;
     const acceptedCrypto = await AcceptedCrypto.findOne({ where: { shortTitle: currency } })
@@ -11,7 +9,6 @@ const createOrder = async (req, res) => {
         include: { model: Brand, as: "brand" }
     })
     const generateWalletAddress = await quidax.wallets.createPaymentAddress("me", acceptedCrypto.shortTitle)
-    await sleep(5000)
     const walletAddress = await quidax.wallets.fetchPaymentAddressById("me", acceptedCrypto.shortTitle, generateWalletAddress.data.id)
     const currentPriceTickerObj = await quidax.markets.fetchMarketTicker(
         acceptedCrypto.ticker

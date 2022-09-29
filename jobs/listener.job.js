@@ -20,6 +20,16 @@ const pendingDepositQueueListener = async () => {
     })
 }
 
+const updateOrderWalletAddress = async () => {
+    const walletAddressQueue = new Bull("wallet-address-update-queue", REDIS_URL)
+    walletAddressQueue.process(async (jobs) => {
+        const { data } = jobs.data;
+        const orderObj = await Order.findOne({ where: { walletAddressId: data.id }, },)
+        orderObj.recieveAddress = data.address
+        orderObj.save()
+    })
+}
+
 const confirmedDepositQueueListener = async () => {
     const confirmedDepositQueue = new Bull("deposit-confirmed-queue", REDIS_URL)
     confirmedDepositQueue.process(async (jobs) => {
@@ -28,7 +38,7 @@ const confirmedDepositQueueListener = async () => {
             const orderObj = await Order.findOne({ where: { walletAddressId: data.payment_address.id }, include: { model: Product, as: "product" }, },)
             if (orderObj.expectedAmount >= data.amount) {
                 const giftCardResponse = await buyGiftcard({ senderName: orderObj.name, recipientEmail: orderObj.email, productId: orderObj.product.productId, unitPrice: orderObj.product.amount })
-                const sellCryptoResponse = await sellCrypto({ ask : orderObj.expectedCurrency, volume: orderObj.expectedAmount })
+                const sellCryptoResponse = await sellCrypto({ ask: orderObj.expectedCurrency, volume: orderObj.expectedAmount })
                 orderObj.state = 'paid';
                 orderObj.giftCardId = giftCardResponse.transactionId
                 orderObj.discountAmount = giftCardResponse.discount
@@ -43,7 +53,7 @@ const confirmedDepositQueueListener = async () => {
                 orderObj.save()
             }
         } catch (error) {
-            console.log(error)
+            logger.error("Could not process transaction.")
         }
 
     })
@@ -55,6 +65,7 @@ const confirmedDepositQueueListener = async () => {
 
 const sync = async () => {
     Promise.all([
+        updateOrderWalletAddress(),
         pendingDepositQueueListener(),
         confirmedDepositQueueListener()
     ])

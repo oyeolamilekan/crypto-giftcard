@@ -1,9 +1,11 @@
-const { dispatchPendingDeposit, dispatchConfirmedDeposit } = require('../jobs/deposit.job');
+const { dispatchPendingDeposit, dispatchConfirmedDeposit, dispatchWalletAddress } = require('../jobs/deposit.job');
 
 const processWebhook = async (req, res) => {
     const data = req.body;
     const { event } = data;
     switch (event) {
+        case "wallet.address.generated":
+            dispatchWalletAddress(data)
         case "deposit.transaction.confirmation":
             dispatchPendingDeposit(data)
             break;

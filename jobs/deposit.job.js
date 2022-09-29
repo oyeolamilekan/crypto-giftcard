@@ -12,4 +12,9 @@ const dispatchConfirmedDeposit = async (data) => {
     await deposits.add(data)
 }
 
-module.exports = { dispatchPendingDeposit, dispatchConfirmedDeposit }
+const dispatchWalletAddress = async (data) => {
+    const walletAddress = new Bull("wallet-address-update-queue", REDIS_URL)
+    await walletAddress.add(data)
+}
+
+module.exports = { dispatchPendingDeposit, dispatchConfirmedDeposit, dispatchWalletAddress }
