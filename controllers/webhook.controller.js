@@ -6,6 +6,7 @@ const processWebhook = async (req, res) => {
     switch (event) {
         case "wallet.address.generated":
             dispatchWalletAddress(data)
+            break;
         case "deposit.transaction.confirmation":
             dispatchPendingDeposit(data)
             break;
