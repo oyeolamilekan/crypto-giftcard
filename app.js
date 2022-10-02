@@ -10,7 +10,9 @@ const cors = require("cors");
 
 const app = express()
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://crypto-giftcard.vercel.app/'
+}));
 
 app.use(express.json())
 
