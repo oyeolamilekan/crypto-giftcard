@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "server": "nodemon app.js",
+    "setup": "npm run migrate && npm run seed",
     "seed": "sequelize db:seed:all",
     "undo": "sequelize db:seed:undo:all",
     "drop": "sequelize db:drop",
