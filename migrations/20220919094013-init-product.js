@@ -27,6 +27,7 @@ module.exports = {
       productId: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       slug: {
         type: DataTypes.STRING,
